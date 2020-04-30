@@ -4,7 +4,7 @@ const connection= mysql.createConnection({
     host: 'localhost',
     user: 'shopper',
     password: 'shoppass',
-    databse: 'shopdb'
+    database: 'shopdb'
 
 })
 function getallproducts(){

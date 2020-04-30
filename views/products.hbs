@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Inventory</h1>
     <table border="1" cellspacing="10" cellpadding="10">
         <tr>
             <th>Name</th>
@@ -13,8 +14,8 @@
         </tr>
         {{#each products as |product|}}
         <tr>
-            <td>product.Name</td>
-            <td>product.Brand</td>
+            <td>{{product.name}}</td>
+            <td>{{product.brand}}</td>
         </tr>
         {{/each}}
     </table>
