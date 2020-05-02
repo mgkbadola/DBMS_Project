@@ -10,9 +10,7 @@ app.use('/static', express.static('public'))
 
 app.set("view engine","hbs");
 app.get('/', (req,res)=>{
-          res.render('index').catch((err)=>{
-              res.send(err)
-          })
+          res.render('index')
 });
 app.get('/products', (req,res)=>{
     db.getallproducts()
@@ -27,6 +25,24 @@ app.get('/employees', (req,res)=>{
     db.getallemployees()
         .then((employees)=>{
             res.render('employees',{employees})
+        })
+        .catch((err)=>{
+            res.send(err)
+        })
+});
+app.get('/customers', (req,res)=>{
+    db.getallcustomers()
+        .then((customers)=>{
+            res.render('customers',{customers})
+        })
+        .catch((err)=>{
+            res.send(err)
+        })
+});
+app.get('/purchases', (req,res)=>{
+    db.getallpurchases()
+        .then((purview)=>{
+            res.render('purchases',{purview})
         })
         .catch((err)=>{
             res.send(err)
