@@ -2,16 +2,17 @@ const mysql= require('mysql2')
 
 const connection= mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'BlessRNG',
-    database: 'dummy'
+    user: 'shopper',
+    password: 'shoppass',
+    database: 'shopdb'
+    
 
 });
 function getallproducts(){
     return new Promise(function(resolve,reject)
     {
         connection.query(
-        'select * from products',
+        'select * from product',
         function(err,rows,cols){
             if(err) {reject(err) }
             else {resolve(rows) }

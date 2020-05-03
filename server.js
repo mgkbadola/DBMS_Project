@@ -10,16 +10,19 @@ app.use('/static', express.static('public'))
 
 app.set("view engine","hbs");
 app.get('/', (req,res)=>{
-          res.render('index')
+    res.render('index')
+    
 });
 app.get('/products', (req,res)=>{
     db.getallproducts()
-        .then((products)=>{
-            res.render('products',{products})
-        })
-        .catch((err)=>{
-            res.send(err)
-        })
+    .then((products)=>{
+        res.render('products',{products})
+    })
+    .catch((err)=>{
+        
+        res.send(err)
+    })
+    
 });
 app.get('/employees', (req,res)=>{
     db.getallemployees()
@@ -34,6 +37,7 @@ app.get('/customers', (req,res)=>{
     db.getallcustomers()
         .then((customers)=>{
             res.render('customers',{customers})
+           
         })
         .catch((err)=>{
             res.send(err)
