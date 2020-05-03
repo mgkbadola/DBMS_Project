@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Employees - GADA ELECTRONIX</title>
+    <title>Customers - GADA ELECTRONIX</title>
     <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i">
     <link rel="stylesheet" href="static/fonts/simple-line-icons.min.css">
@@ -22,6 +22,7 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/products">Catalog</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/employees">Employees</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link active" href="/customers">Customers</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/premium_customers">Premium Customers</a></li>
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/purchases">Purchase</a></li>
             </ul>
         </div>
@@ -34,12 +35,15 @@
                 <h2 class="text-info">Customer Page</h2>
                 <p>Welcome employee! This is the list of all the customers that we have had!</p>
             </div>
+            <div class="container" style="padding-bottom: 10px">
+                <input type="text" id="myInput" placeholder="Search for names.." onkeyup="myFunction()" title="Type in a name">
+            </div>
             <div class="container">
                 <table id="example" class="table table-striped table-bordered" style="width: 100%">
                     <thead>
                     <tr>
-                        <th>Customer ID</th>
                         <th>Name</th>
+                        <th>Customer ID</th>
                         <th>Age</th>
                         <th>Phone</th>
                         <th>City</th>
@@ -48,8 +52,8 @@
                     <tbody>
                     {{#each customers as |customers|}}
                         <tr>
-                            <td>{{customers.CUSTOMER_ID}}</td>
                             <td>{{customers.NAME}}</td>
+                            <td>{{customers.CUSTOMER_ID}}</td>
                             <td>{{customers.AGE}}</td>
                             <td>{{customers.PHONE}}</td>
                             <td>{{customers.CITY}}</td>

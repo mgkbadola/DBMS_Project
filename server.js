@@ -39,6 +39,15 @@ app.get('/customers', (req,res)=>{
             res.send(err)
         })
 });
+app.get('/premium_customers', (req,res)=>{
+    db.getallprm_customers()
+        .then((premium_customers)=>{
+            res.render('premium_customers',{premium_customers});
+        })
+        .catch((err)=>{
+            res.send(err)
+        })
+});
 app.get('/purchases', (req,res)=>{
     db.getallpurchases()
         .then((purview)=>{
