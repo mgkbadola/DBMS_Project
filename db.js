@@ -2,9 +2,9 @@ const mysql= require('mysql2')
 
 const connection= mysql.createConnection({
     host: 'localhost',
-    user: 'shopper',
-    password: 'shoppass',
-    database: 'shopdb'
+    user: 'root',
+    password: 'BlessRNG',
+    database: 'dummy'
     
 
 });
@@ -12,7 +12,7 @@ function getallproducts(){
     return new Promise(function(resolve,reject)
     {
         connection.query(
-        'select * from product',
+        'select * from products',
         function(err,rows,cols){
             if(err) {reject(err) }
             else {resolve(rows) }
